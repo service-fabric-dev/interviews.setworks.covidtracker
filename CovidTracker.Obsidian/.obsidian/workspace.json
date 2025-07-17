@@ -1,0 +1,186 @@
+{
+  "main": {
+    "id": "e7a4b9a66ab00f7b",
+    "type": "split",
+    "children": [
+      {
+        "id": "6cf611f73a6cd863",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "709a1c3b3ab5d4fe",
+            "type": "leaf",
+            "state": {
+              "type": "excalidraw",
+              "state": {
+                "file": "Diagrams/covidtracker-2025-07-16 20.02.35.excalidraw.md"
+              },
+              "icon": "excalidraw-icon",
+              "title": "covidtracker-2025-07-16 20.02.35.excalidraw"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "e7fc0af592225f9b",
+    "type": "split",
+    "children": [
+      {
+        "id": "071efe0cbbfb6fce",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "e1d6f0750d582079",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical",
+                "autoReveal": false
+              },
+              "icon": "lucide-folder-closed",
+              "title": "Files"
+            }
+          },
+          {
+            "id": "a3c8b8bb22c1de2e",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              },
+              "icon": "lucide-search",
+              "title": "Search"
+            }
+          },
+          {
+            "id": "67c4a6bbf0054f0f",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {},
+              "icon": "lucide-bookmark",
+              "title": "Bookmarks"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "8dfa417042882e79",
+    "type": "split",
+    "children": [
+      {
+        "id": "3327ff8227af13ba",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "dcba11600d1d917f",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Diagrams/covidtracker-2025-07-16 20.02.35.excalidraw.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-coming-in",
+              "title": "Backlinks for covidtracker-2025-07-16 20.02.35.excalidraw"
+            }
+          },
+          {
+            "id": "2d8efb4969160266",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "Diagrams/covidtracker-2025-07-16 20.02.35.excalidraw.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              },
+              "icon": "links-going-out",
+              "title": "Outgoing links from covidtracker-2025-07-16 20.02.35.excalidraw"
+            }
+          },
+          {
+            "id": "05f3f38b861fe39d",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-tags",
+              "title": "Tags"
+            }
+          },
+          {
+            "id": "7a65e91ee7a4a612",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Diagrams/covidtracker-2025-07-16 20.02.35.excalidraw.md",
+                "followCursor": false,
+                "showSearch": false,
+                "searchQuery": ""
+              },
+              "icon": "lucide-list",
+              "title": "Outline of covidtracker-2025-07-16 20.02.35.excalidraw"
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false,
+      "obsidian-excalidraw-plugin:New drawing": false
+    }
+  },
+  "active": "e1d6f0750d582079",
+  "lastOpenFiles": [
+    "Diagrams/Untitled.canvas",
+    "Diagrams/covidtracker-2025-07-16 20.02.35.excalidraw.md",
+    "README.md",
+    "Diagrams",
+    "obj/CovidTracker.Obsidian.csproj.nuget.dgspec.json",
+    "obj/project.nuget.cache",
+    "obj/project.assets.json",
+    "obj/d12953bc-e51d-4087-b5ab-2062a2438a95.tmp",
+    "obj/CovidTracker.Obsidian.csproj.nuget.g.targets",
+    "obj/CovidTracker.Obsidian.csproj.nuget.g.props",
+    "obj",
+    "obj/Debug/net8.0/CovidTracker.Obsidian.AssemblyInfo.cs",
+    "obj/Debug/net8.0/CovidTracker.Obsidian.AssemblyInfoInputs.cache"
+  ]
+}
