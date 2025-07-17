@@ -19,6 +19,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\CovidTracker.Domain\CovidTracker.Domain.csproj" />
+    <ProjectReference Include="..\CovidTracker.Infrastructure\CovidTracker.Infrastructure.csproj" />
     <ProjectReference Include="..\CovidTracker.ServiceDefaults\CovidTracker.ServiceDefaults.csproj" />
     <ProjectReference Include="..\CovidTracker.Shared\CovidTracker.Shared.csproj" />
   </ItemGroup>

@@ -1,5 +1,3 @@
-﻿using CovidTracker.ApiService.Services;
-
 namespace CovidTracker.ApiService.Extensions;
 
 public static class ServiceCollectionExtensions
@@ -8,7 +6,7 @@ public static class ServiceCollectionExtensions
     {
         ArgumentNullException.ThrowIfNull(services, nameof(services));
 
-        services.AddHostedService<CovidIngestionService>();
+        // Register API-specific services.
 
         return services;
     }

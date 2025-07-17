@@ -1,4 +1,5 @@
 ﻿using CovidTracker.Domain.Models;
+using CovidTracker.Domain.Repositories;
 
 namespace CovidTracker.Infrastructure.Repositories;
 

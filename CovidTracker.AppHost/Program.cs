@@ -4,6 +4,8 @@ var builder = DistributedApplication.CreateBuilder(args);
 
 var apiService = builder.AddProject<Projects.CovidTracker_ApiService>("apiservice");
 
+builder.AddProject<Projects.CovidTracker_WorkerService>("covidtracker-workerservice");
+
 builder.AddProject<Projects.CovidTracker_Web>("webfrontend")
     .WithExternalHttpEndpoints()
     //.WithReference(cache)

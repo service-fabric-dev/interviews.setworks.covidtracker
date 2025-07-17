@@ -7,8 +7,11 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="MassTransit" Version="8.5.0" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\CovidTracker.Domain\CovidTracker.Domain.csproj" />
-    <ProjectReference Include="..\CovidTracker.Infrastructure\CovidTracker.Infrastructure.csproj" />
     <ProjectReference Include="..\CovidTracker.Shared\CovidTracker.Shared.csproj" />
   </ItemGroup>
 

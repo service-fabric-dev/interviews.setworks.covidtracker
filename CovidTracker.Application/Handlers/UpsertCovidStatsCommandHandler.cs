@@ -1,5 +1,6 @@
-﻿using CovidTracker.Application.Commands;
-using CovidTracker.Infrastructure.Repositories;
+using CovidTracker.Application.Commands;
+using CovidTracker.Domain.Repositories;
+
 using MassTransit;
 
 namespace CovidTracker.Application.Handlers;

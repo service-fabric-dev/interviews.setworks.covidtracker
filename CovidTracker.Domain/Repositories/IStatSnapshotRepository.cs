@@ -1,6 +1,6 @@
 ﻿using CovidTracker.Domain.Models;
 
-namespace CovidTracker.Infrastructure.Repositories;
+namespace CovidTracker.Domain.Repositories;
 
 public interface IStatSnapshotRepository
 {

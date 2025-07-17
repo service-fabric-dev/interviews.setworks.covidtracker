@@ -1,4 +1,5 @@
 ﻿using CovidTracker.Domain.Models;
+using CovidTracker.Domain.Repositories;
 using CovidTracker.Infrastructure.Data;
 using Microsoft.EntityFrameworkCore;
 

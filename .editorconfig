@@ -1,0 +1,21 @@
+# Place this at the root of your solution or project
+root = true
+
+# Settings for all C# files
+[*.cs]
+
+# Use UTF-8
+charset = utf-8
+
+# Use tabs or spaces
+indent_style = space
+indent_size = 4
+
+# Sort System.* usings first
+dotnet_sort_system_directives_first = true
+
+# Separate using groups with a blank line
+dotnet_separate_import_directive_groups = true
+
+# Optional formatting settings for consistency
+csharp_using_directive_placement = outside_namespace

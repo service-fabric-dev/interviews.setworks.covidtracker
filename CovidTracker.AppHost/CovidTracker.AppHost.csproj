@@ -14,6 +14,7 @@
   <ItemGroup>
     <ProjectReference Include="..\CovidTracker.ApiService\CovidTracker.ApiService.csproj" />
     <ProjectReference Include="..\CovidTracker.Web\CovidTracker.Web.csproj" />
+    <ProjectReference Include="..\CovidTracker.WorkerService\CovidTracker.WorkerService.csproj" />
   </ItemGroup>
 
   <ItemGroup>

@@ -20,6 +20,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CovidTracker.Infrastructure
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CovidTracker.Shared", "CovidTracker.Shared\CovidTracker.Shared.csproj", "{91B8D31C-304E-6F60-B375-79521880B8AD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CovidTracker.WorkerService", "CovidTracker.WorkerService\CovidTracker.WorkerService.csproj", "{D5308FDC-9727-657A-5D82-E8644B33B4E7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -62,6 +64,10 @@ Global
 		{91B8D31C-304E-6F60-B375-79521880B8AD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{91B8D31C-304E-6F60-B375-79521880B8AD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{91B8D31C-304E-6F60-B375-79521880B8AD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D5308FDC-9727-657A-5D82-E8644B33B4E7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D5308FDC-9727-657A-5D82-E8644B33B4E7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D5308FDC-9727-657A-5D82-E8644B33B4E7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D5308FDC-9727-657A-5D82-E8644B33B4E7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

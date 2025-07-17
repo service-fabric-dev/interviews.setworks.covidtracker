@@ -1,0 +1,24 @@
+<Project Sdk="Microsoft.NET.Sdk.Worker">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UserSecretsId>dotnet-CovidTracker.WorkerService-0cec3d47-55e3-422c-8963-75e0d2df5273</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Extensions.Hosting" Version="8.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CovidTracker.Application\CovidTracker.Application.csproj" />
+    <ProjectReference Include="..\CovidTracker.Domain\CovidTracker.Domain.csproj" />
+    <ProjectReference Include="..\CovidTracker.Infrastructure\CovidTracker.Infrastructure.csproj" />
+    <ProjectReference Include="..\CovidTracker.ServiceDefaults\CovidTracker.ServiceDefaults.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Consumers\" />
+  </ItemGroup>
+</Project>

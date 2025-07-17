@@ -1,18 +1,25 @@
-﻿using MassTransit;
 using CovidTracker.Application.Commands;
+using CovidTracker.Application.Services;
+using CovidTracker.Domain.Events;
 using CovidTracker.Domain.Models;
-using CovidTracker.Infrastructure.Messaging;
-using CovidTracker.Infrastructure.Repositories;
+using CovidTracker.Domain.Repositories;
+
+using MassTransit;
 
 namespace CovidTracker.Application.Handlers;
 
+/// <summary>
+/// CQRS command handler that generates COVID-19 alerts based on the latest state statistics.
+/// </summary>
+/// <param name="snapshotRepository">Repository for COVID stat snapshots</param>
+/// <param name="publisher">Integration event publisher</param>
 public class GenerateCovidAlertsCommandHandler(
         IStatSnapshotRepository snapshotRepository,
-        IMessagePublisher messagePublisher
+        IIntegrationPublisherService publisher
     ) : IConsumer<GenerateCovidAlertsCommand>
 {
     private readonly IStatSnapshotRepository _snapshotRepository = snapshotRepository ?? throw new ArgumentNullException(nameof(snapshotRepository));
-    private readonly IMessagePublisher _messagePublisher = messagePublisher ?? throw new ArgumentNullException(nameof(messagePublisher));
+    private readonly IIntegrationPublisherService _publisher = publisher ?? throw new ArgumentNullException(nameof(publisher));
 
     public async Task Consume(ConsumeContext<GenerateCovidAlertsCommand> context)
     {
@@ -25,7 +32,8 @@ public class GenerateCovidAlertsCommandHandler(
         {
             await Parallel.ForEachAsync(alerts, cancellation, async (alert, ct) =>
             {
-                await _messagePublisher.PublishCovidAlert(alert, ct);
+                var alertEvent = new AlertGeneratedEvent(alert);
+                await _publisher.PublishEvent(alertEvent, ct); // This integration event will drive SignalR notifications in the Blazor UI
             });
         }
 

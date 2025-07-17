@@ -1,6 +1,9 @@
+using CovidTracker.Infrastructure.Extensions;
+using CovidTracker.Infrastructure.Hubs;
 using CovidTracker.Web.Components;
 using CovidTracker.Web.Services;
-using Syncfusion.Blazor;
+
+using Microsoft.AspNetCore.ResponseCompression;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -15,6 +18,14 @@ builder.Services.AddRazorComponents()
 
 builder.Services.AddLogging();
 
+builder.Services
+    .AddEventingInfrastructure(new()
+    {
+        UsePresentationEvents = true,
+        BusConnectionString = builder.Configuration.GetConnectionString("CovidTrackerBus") ?? throw new InvalidOperationException("Missing connection string 'CovidTrackerBus'"),
+        ConsumerAssembly = typeof(CovidTracker.Web.Consumers.AlertGeneratedConsumer).Assembly
+    });
+
 builder.Services.AddHttpClient<ApiService>((sp, client) =>
 {
     var baseUri = sp.GetRequiredService<IConfiguration>()["services:apiservice:https:0"]
@@ -22,10 +33,17 @@ builder.Services.AddHttpClient<ApiService>((sp, client) =>
     client.BaseAddress = new Uri(baseUri);
 });
 
-builder.Services.AddSyncfusionBlazor();
-//builder.Services.AddScoped<ApiService>();
+builder.Services.AddSignalR();
+
+builder.Services.AddResponseCompression(opts =>
+{
+    opts.MimeTypes = ResponseCompressionDefaults.MimeTypes.Concat(
+        ["application/octet-stream"]);
+});
 
 var app = builder.Build();
+
+app.UseResponseCompression();
 
 if (!app.Environment.IsDevelopment())
 {
@@ -45,5 +63,7 @@ app.MapRazorComponents<App>()
     .AddInteractiveServerRenderMode();
 
 app.MapDefaultEndpoints();
+
+app.MapHub<AlertsHub>("/alerts");
 
 app.Run();
