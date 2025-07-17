@@ -13,9 +13,9 @@ CovidTracker is a modular, message-driven system that ingests, stores, and visua
 | `CovidTracker.Domain`    | Core domain model: aggregates, entities, value objects, domain services, and event interfaces |
 | `CovidTracker.Application` | CQRS handlers, use case coordination, domain orchestration logic |
 | `CovidTracker.Infrastructure` | Implements domain/service interfaces (e.g., repositories, SignalR, MassTransit, API clients) |
-| `CovidTracker.ApiService` | ASP.NET Core Web API host: exposes CQRS endpoints, schedules background ingestion jobs |
+| `CovidTracker.ApiService` | ASP.NET Core Web API host: exposes CQRS endpoints |
 | `CovidTracker.Web`       | Blazor Server UI: renders stat map and listens to real-time updates via SignalR |
-| `CovidTracker.WorkerService` | Background consumer host: listens for integration events, updates state, and notifies clients |
+| `CovidTracker.WorkerService` | Background consumer host: periodically triggers stat ingestion, updates state, and notifies other sercvices over message bus |
 | `CovidTracker.AppHost`   | .NET Aspire orchestration layer: wires services and infrastructure together for local dev |
 
 ---
