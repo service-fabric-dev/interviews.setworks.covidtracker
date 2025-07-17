@@ -1,0 +1,30 @@
+﻿<div class="h-full w-full bg-gray-700">
+    <div class="h-12 w-full flex items-center px-3 bg-primary-800">
+        <a class="text-primary-50 hover:underline" href="/">COVID-19 Case Tracker</a>
+    </div>
+
+    <div class="w-full flex flex-col text-gray-50"
+         onclick="document.querySelector('.navbar-toggler').click()">
+        <nav class="nav flex-column">
+            @foreach (var link in NavLinks)
+            {
+                <div class="px-3 py-2">
+                    <NavLink class="nav-link" href="@link.Href" Match="@link.Match">
+                        <span class="@link.IconClass" aria-hidden="true"></span> @link.Text
+                    </NavLink>
+                </div>
+            }
+        </nav>
+    </div>
+</div>
+
+@code {
+    private record NavLinkDescriptor(string Href, string IconClass, string Text, NavLinkMatch Match = NavLinkMatch.Prefix);
+
+    private List<NavLinkDescriptor> NavLinks = new()
+    {
+        new NavLinkDescriptor("/", "fas fa-map", "Case Map", NavLinkMatch.All),
+        new NavLinkDescriptor("/stats", "fas fa-chart-simple", "Statistics")
+        // Add more links here as needed
+    };
+}

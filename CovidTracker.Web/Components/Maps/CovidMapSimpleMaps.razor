@@ -1,0 +1,59 @@
+﻿@using CovidTracker.Web.Services
+@using System.Text.Json
+@rendermode InteractiveServer
+
+@inject ILogger<CovidMapSimpleMaps> Logger
+@inject IJSRuntime JS
+@inject ApiService ApiService
+
+<HeadContent>
+    <script type="text/javascript" src="/lib/simplemaps/html5usmapv4.5/mapdata.js"></script>
+    <script type="text/javascript" src="/lib/simplemaps/html5usmapv4.5/usmap.js"></script>
+</HeadContent>
+
+<div class="flex flex-col w-fit h-fit items-center">
+    <button class="h-fit w-fit px-2 bg-secondary-500 rounded-sm hover:bg-secondary-400 hover:cursor-pointer"
+            @onclick="LoadCovidDataIntoMap">
+        Load COVID data
+    </button>
+
+    <div id="map" class="w-340 h-fit" />
+</div>
+
+<script type="text/javascript">
+    window.updateCovidData = function(payload) {
+        simplemaps_usmap.load();
+        Object.entries(payload).forEach(([stateCode, data]) => {
+            simplemaps_usmap.mapdata.state_specific[stateCode] = {
+                ...simplemaps_usmap.mapdata.state_specific[stateCode],
+                name: data.state,
+                description: data.description
+            };
+        });
+        simplemaps_usmap.refresh();
+    }
+</script>
+
+@code {
+    public async Task LoadCovidDataIntoMap()
+    {
+        // Load StateData into tooltip for each state
+        // Requires fetching state data, mapping it to simplemaps-compatible format, and hydrating it via SimpleMaps JS API
+        var stateStats = await ApiService.GetStateStatsAsync();
+
+        var mapData = stateStats.Stats
+            .Where(stat => !stat.StateCode.StartsWith("No known"))
+            .ToDictionary(
+                stat => stat.StateCode,
+                stat => new
+                {
+                    name = stat.State,
+                    description = $"Today: {stat.TodayCases:N0}<br>Total: {stat.TotalCases:N0}",
+                });
+
+        Logger.LogDebug("Mapped state stats to SimpleMaps format, {mapped}", mapData);
+        await JS.InvokeVoidAsync("updateCovidData", mapData);
+
+        StateHasChanged();
+    }
+}

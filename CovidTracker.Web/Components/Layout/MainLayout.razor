@@ -1,0 +1,17 @@
+﻿@inherits LayoutComponentBase
+
+<div class="h-full w-full flex flex-row">
+    <div class="w-54">
+        <NavMenu />
+    </div>
+
+    <main class="h-full w-full">
+        <div class="h-12 w-full flex flex-row px-4 items-center bg-gray-700 text-secondary-50">
+            Header Bar
+        </div>
+
+        <section class="h-[calc(100%-3rem)] w-full">
+            @Body
+        </section>
+    </main>
+</div>
