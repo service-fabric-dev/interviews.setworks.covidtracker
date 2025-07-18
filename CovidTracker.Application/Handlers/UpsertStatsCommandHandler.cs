@@ -5,7 +5,7 @@ using MassTransit;
 
 namespace CovidTracker.Application.Handlers;
 
-public class UpsertCovidStatsCommandHandler(
+public class UpsertStatsCommandHandler(
         IStatRepository statRepository
     ) : IConsumer<UpsertCovidStatsCommand>
 {

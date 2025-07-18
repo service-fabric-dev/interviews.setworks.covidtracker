@@ -4,19 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "6cf611f73a6cd863",
+        "id": "ae37078f65253bbd",
         "type": "tabs",
         "children": [
           {
-            "id": "709a1c3b3ab5d4fe",
+            "id": "7b8bc8367841002d",
             "type": "leaf",
             "state": {
-              "type": "excalidraw",
-              "state": {
-                "file": "Diagrams/covidtracker-2025-07-16 20.02.35.excalidraw.md"
-              },
-              "icon": "excalidraw-icon",
-              "title": "covidtracker-2025-07-16 20.02.35.excalidraw"
+              "type": "empty",
+              "state": {},
+              "icon": "lucide-file",
+              "title": "New tab"
             }
           }
         ]
@@ -92,7 +90,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Diagrams/covidtracker-2025-07-16 20.02.35.excalidraw.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +99,7 @@
                 "unlinkedCollapsed": true
               },
               "icon": "links-coming-in",
-              "title": "Backlinks for covidtracker-2025-07-16 20.02.35.excalidraw"
+              "title": "Backlinks"
             }
           },
           {
@@ -111,12 +108,11 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Diagrams/covidtracker-2025-07-16 20.02.35.excalidraw.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               },
               "icon": "links-going-out",
-              "title": "Outgoing links from covidtracker-2025-07-16 20.02.35.excalidraw"
+              "title": "Outgoing links"
             }
           },
           {
@@ -140,13 +136,12 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Diagrams/covidtracker-2025-07-16 20.02.35.excalidraw.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
               },
               "icon": "lucide-list",
-              "title": "Outline of covidtracker-2025-07-16 20.02.35.excalidraw"
+              "title": "Outline"
             }
           }
         ]
@@ -167,10 +162,11 @@
       "obsidian-excalidraw-plugin:New drawing": false
     }
   },
-  "active": "e1d6f0750d582079",
+  "active": "7b8bc8367841002d",
   "lastOpenFiles": [
+    "Diagrams/covidtracker-events-2025-07-16 21.33.54.excalidraw.md",
+    "Diagrams/covidtracker-layers-2025-07-16 20.02.35.excalidraw.md",
     "Diagrams/Untitled.canvas",
-    "Diagrams/covidtracker-2025-07-16 20.02.35.excalidraw.md",
     "README.md",
     "Diagrams",
     "obj/CovidTracker.Obsidian.csproj.nuget.dgspec.json",

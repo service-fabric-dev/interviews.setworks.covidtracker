@@ -17,8 +17,4 @@
     <ProjectReference Include="..\CovidTracker.Infrastructure\CovidTracker.Infrastructure.csproj" />
     <ProjectReference Include="..\CovidTracker.ServiceDefaults\CovidTracker.ServiceDefaults.csproj" />
   </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Consumers\" />
-  </ItemGroup>
 </Project>

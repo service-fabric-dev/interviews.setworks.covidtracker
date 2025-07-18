@@ -1,4 +1,4 @@
-﻿using CovidTracker.Domain.Models;
+using CovidTracker.Domain.Models;
 using CovidTracker.Domain.Repositories;
 
 namespace CovidTracker.Infrastructure.Repositories;
@@ -11,6 +11,20 @@ public class StatSnapshotRepository(IStatRepository statRepository) : IStatSnaps
     {
         var stats = await _statRepository.GetLatestStatsAsync(cancellation);
         return new StateStatSnapshot(stats);
+    }
+
+    public async Task<(StateStatSnapshot previous, StateStatSnapshot current)> GetLastTwoSnapshotsAsync(CancellationToken cancellation = default)
+    {
+        var stateGroups = await _statRepository.GetLatestStatsAsync(2, cancellation);
+        if (stateGroups.Count < 2)
+        {
+            throw new InvalidOperationException("Not enough snapshots available to compare.");
+        }
+
+        return ( // TODO: make sure this is not inverted
+            new StateStatSnapshot(stateGroups[0]),
+            new StateStatSnapshot(stateGroups[1])
+        );
     }
 
     public async Task SaveSnapshotAsync(StateStatSnapshot snapshot, CancellationToken cancellation = default)

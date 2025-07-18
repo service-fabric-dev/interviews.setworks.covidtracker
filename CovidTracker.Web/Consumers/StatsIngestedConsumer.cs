@@ -6,18 +6,18 @@ using MassTransit;
 namespace CovidTracker.Web.Consumers;
 
 /// <summary>
-/// Consumer that saves stats to the database and broadcasts updates via SignalR to the Blazor UI.
+/// Consumer that broadcasts updates via SignalR to the Blazor UI.
 /// </summary>
-/// <param name="publisher">Presentation event publisher to forward events to the client UI</param>
+/// <param name="presentationPublisher">Presentation event publisher to forward events to the client UI</param>
 public class StatsIngestedConsumer(
-        IPresentationPublisherService publisher
+        IPresentationPublisherService presentationPublisher
     ) : IConsumer<StatsIngestedEvent>
 {
-    private readonly IPresentationPublisherService _publisher = publisher ?? throw new ArgumentNullException(nameof(publisher));
+    private readonly IPresentationPublisherService _presentationPublisher = presentationPublisher ?? throw new ArgumentNullException(nameof(presentationPublisher));
 
     public async Task Consume(ConsumeContext<StatsIngestedEvent> context)
     {
         var stats = context.Message.Stats;
-        await _publisher.PublishEvent("ReceiveCovidUpdate", stats, context.CancellationToken);
+        await _presentationPublisher.PublishEvent("ReceiveCovidUpdate", stats, context.CancellationToken);
     }
 }
